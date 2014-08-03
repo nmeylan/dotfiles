@@ -22,5 +22,6 @@ if !exists( "*EndToken" )
   endfunction
 endif
 
-imap <S-CR> <ESC>:execute 'normal o' . EndToken()<CR>O
+
+imap <S-CR> <ESC>:execute 'normal o' . EndToken()<CR>i
 nmap <Leader>ee :cf /tmp/autotest.txt<cr> :compiler rubyunit<cr>

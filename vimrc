@@ -1,16 +1,25 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" Show syntax highlighting groups for word under cursor
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val,"name")')
+endfunc
+
 set nocompatible
 set backspace=indent,eol,start
 set autoindent		" always set autoindenting on
-set history=50		" keep 50 lines of command line history
+set history=1000	" keep 1000 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
-
-set wildmode=list:full
-
+set title               " display title
+set wildmode=list:full 
+set relativenumber
 map Q gq
 vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>
 
@@ -25,21 +34,17 @@ endif
 
 let g:ruby_path = &path
 
+
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
   au!
 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
+  " For all text files set 'textwidth' to 200 characters.
+  autocmd FileType text setlocal textwidth=200
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -62,7 +67,6 @@ endif " has("autocmd")
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
-  syntax on
   set hlsearch
 endif
 
@@ -77,6 +81,12 @@ au BufNewFile,BufRead *.ltx                      set wm=4
 
 set backupdir=/tmp
 
+syntax on
+" Enable file type detection.
+" Use the default filetype settings, so that mail gets 'tw' set to 72,
+" 'cindent' is on in C files, etc.
+" Also load indent files, to automatically do language-dependent indenting.
+filetype plugin indent on
 filetype on
 filetype plugin on
 
@@ -129,8 +139,8 @@ set statusline=%t%(\ [%n%M]%)%(\ %H%R%W%)\ %(%c-%v,\ %l\ of\ %L,\ (%o)\ %P\ 0x%B
 "match ExtraWhitespace /\s\+$/
 "match ExtraTabs /\t\+/
 "
-"highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
-"highlight ExtraTabs ctermbg=red guibg=red
+highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
+highlight ExtraTabs ctermbg=gray guibg=#757568
 let ruby_space_errors = 1
 let c_space_errors = 1
 
@@ -173,7 +183,7 @@ endfunction
 "call MoveToProjectRoot()
 
 " Changelog configuration
-let g:changelog_username='Aaron Patterson <aaron@tenderlovemaking.com>'
+let g:changelog_username='Nicolas Meylan from Aaron Patterson .vimrc file : https://github.com/tenderlove/dot_vim.git'
 let g:changelog_dateformat='%c'
 
 " git grep
@@ -181,3 +191,27 @@ map <Leader>gg :Ggrep -e '<C-R>=expand("<cword>")<Enter>'<Enter>
 
 set exrc
 set secure
+
+
+set t_Co=256
+if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
+    \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
+  "Use the guicolorscheme plugin to makes 256-color or 88-color
+  " terminal use GUI colors rather than cterm colors.
+  runtime! plugin/guicolorscheme.vim
+  GuiColorScheme nmeylan_scheme
+else
+  " For 8-color 16-color terminals or for gvim, just use the
+  " regular :colorscheme command.
+  colorscheme nmeylan_scheme
+endif
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+set splitbelow
+set splitright
+
+autocmd vimenter * NERDTree
