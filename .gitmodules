@@ -7,3 +7,33 @@
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
+[submodule "bundle/vim-lightline"]
+	path = bundle/vim-lightline
+	url = https://github.com/itchyny/lightline.vim
+[submodule "bundle/vim-nerdtree"]
+	path = bundle/vim-nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "bundle/vim-bundler"]
+	path = bundle/vim-bundler
+	url = git://github.com/tpope/vim-bundler.git
+[submodule "vim-coffee-script"]
+	path = vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script
+[submodule "bundle/vim-javascript"]
+	path = bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "bundle/vim-coffee-script"]
+	path = bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script
+[submodule "bundle/vim-rails"]
+	path = bundle/vim-rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule "bundle/vim-ruby_refactoring"]
+	path = bundle/vim-ruby_refactoring
+	url = https://github.com/ecomba/vim-ruby-refactoring.git
+[submodule "bundle/vim-yardoc"]
+	path = bundle/vim-yardoc
+	url = https://github.com/noprompt/vim-yardoc.git
+[submodule "bundle/vim-ruby"]
+	path = bundle/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
