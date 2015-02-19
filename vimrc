@@ -217,3 +217,13 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
+if (has('gui_running'))
+  let g:lightline = {
+        \ 'component': {
+        \   'readonly': '%{&readonly?"":""}',
+        \ },
+        \ 'separator': { 'left': '', 'right': '' },
+        \ 'subseparator': { 'left': '', 'right': '' }
+        \ }
+  set guifont=Inconsolata\ for\ Powerline:h14
+endif
