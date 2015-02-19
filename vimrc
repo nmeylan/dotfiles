@@ -197,17 +197,8 @@ set secure
 
 
 set t_Co=256
-if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
-    \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
-  "Use the guicolorscheme plugin to makes 256-color or 88-color
-  " terminal use GUI colors rather than cterm colors.
-  runtime! plugin/guicolorscheme.vim
-  colorscheme vividchalk
-else
-  " For 8-color 16-color terminals or for gvim, just use the
-  " regular :colorscheme command.
-  colorscheme vividchalk
-endif
+
+colorscheme vividchalk
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
