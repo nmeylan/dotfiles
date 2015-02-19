@@ -6,7 +6,7 @@
 	url = https://github.com/vim-ruby/vim-ruby.git
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
+	url = https://github.com/tpope/vim-fugitive.git
 [submodule "bundle/vim-lightline"]
 	path = bundle/vim-lightline
 	url = https://github.com/itchyny/lightline.vim
@@ -15,7 +15,7 @@
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule "bundle/vim-bundler"]
 	path = bundle/vim-bundler
-	url = git://github.com/tpope/vim-bundler.git
+	url = https://github.com/tpope/vim-bundler.git
 [submodule "vim-coffee-script"]
 	path = vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script
