@@ -173,7 +173,6 @@ function! AlignLine(line, sep, maxpos, extra)
   return m[1] . spaces . m[2]
 endfunction
 
-setlocal spell spelllang=en_us
 compiler rubyunit
 
 function! MoveToProjectRoot()
