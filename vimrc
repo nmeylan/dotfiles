@@ -9,7 +9,9 @@ function! <SID>SynStack()
   endif
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val,"name")')
 endfunc
-
+" syntax checker
+autocmd FileType ruby map <F9> :w<CR>:!ruby -c %<CR>
+autocmd FileType ruby map <F6> :w<CR>:!ruby %<CR>
 set nocompatible
 set backspace=indent,eol,start
 set autoindent		" always set autoindenting on
@@ -20,6 +22,7 @@ set incsearch		" do incremental searching
 set title               " display title
 set wildmode=list:full 
 set relativenumber
+set number
 map Q gq
 vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>
 
@@ -199,11 +202,11 @@ if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
   "Use the guicolorscheme plugin to makes 256-color or 88-color
   " terminal use GUI colors rather than cterm colors.
   runtime! plugin/guicolorscheme.vim
-  GuiColorScheme nmeylan_scheme
+  colorscheme vividchalk
 else
   " For 8-color 16-color terminals or for gvim, just use the
   " regular :colorscheme command.
-  colorscheme nmeylan_scheme
+  colorscheme vividchalk
 endif
 
 nnoremap <C-J> <C-W><C-J>
@@ -214,4 +217,3 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
-autocmd vimenter * NERDTree
