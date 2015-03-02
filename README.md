@@ -11,3 +11,6 @@
 ```git submodule init```
 
 ```git submodule update```
+
+`cp -R fonts/ ~/.fonts`
+` sudo fc-cache -vf`
