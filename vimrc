@@ -194,6 +194,9 @@ map <Leader>gg :Ggrep -e '<C-R>=expand("<cword>")<Enter>'<Enter>
 set exrc
 set secure
 
+setlocal spell spelllang=en_us
+hi clear SpellBad
+hi SpellBad cterm=underline
 
 set t_Co=256
 
