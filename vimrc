@@ -217,3 +217,5 @@ if (has('gui_running'))
         \ }
   set guifont=Inconsolata\ for\ Powerline:h14
 endif
+
+let g:vim_markdown_folding_disabled=1
