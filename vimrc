@@ -26,6 +26,8 @@ set number
 map Q gq
 vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>
 
+:let mapleader = ","
+
 set suffixesadd=.rb
 set path+=lib/**,test/**
 
@@ -196,8 +198,7 @@ set secure
 
 setlocal spell spelllang=en_us
 hi clear SpellBad
-hi SpellBad cterm=underline
-
+hi SpellBad    ctermfg=015      ctermbg=000     cterm=none      guifg=#FFFFFF   guibg=#000000   gui=none
 set t_Co=256
 
 colorscheme vividchalk
