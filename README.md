@@ -16,3 +16,7 @@
 ```git submodule add [bundle-repo] bundle/vim-[bundle-name]```
 
 ```git commit -m 'Added vim-[bundle-name]'```
+
+## Add fonts
+`cp -R fonts/ ~/.fonts`
+` sudo fc-cache -vf`

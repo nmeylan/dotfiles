@@ -43,3 +43,6 @@
 [submodule "bundle/vim-simple-todo"]
 	path = bundle/vim-simple-todo
 	url = https://github.com/vitalk/vim-simple-todo.git
+[submodule "bundle/rust.vim"]
+	path = bundle/vim-rust
+	url = https://github.com/rust-lang/rust.vim.git
