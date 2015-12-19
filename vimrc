@@ -200,7 +200,7 @@ setlocal spell spelllang=en_us
 hi clear SpellBad
 hi SpellBad    ctermfg=015      ctermbg=000     cterm=none      guifg=#FFFFFF   guibg=#000000   gui=none
 set t_Co=256
-
+hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 colorscheme vividchalk
 
 nnoremap <C-J> <C-W><C-J>
